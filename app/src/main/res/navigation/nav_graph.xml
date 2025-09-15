@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment"> <!-- This is now the starting point -->
+
+    <!-- Location 1: The new Home Screen -->
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.careeradvisorjk.ui.main.main.MainFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_main">
+        <!-- The road from Home to the Quiz -->
+        <action
+            android:id="@+id/action_mainFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+    </fragment>
+
+    <!-- Location 2: The Quiz Screen -->
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.example.careeradvisorjk.ui.main.quiz.QuizFragment"
+        android:label="Quiz"
+        tools:layout="@layout/fragment_quiz">
+        <!-- The road from the Quiz to the Directory -->
+        <action
+            android:id="@+id/action_quizFragment_to_collegeDirectoryFragment"
+            app:destination="@id/collegeDirectoryFragment" />
+    </fragment>
+
+    <!-- Location 3: The College Directory -->
+    <fragment
+        android:id="@+id/collegeDirectoryFragment"
+        android:name="com.example.careeradvisorjk.ui.main.main.CollegeListFragment"
+        android:label="College Directory"
+        tools:layout="@layout/fragment_college_list" />
+
+</navigation>
